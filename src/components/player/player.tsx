@@ -5,6 +5,7 @@ interface PlayerProps {
   name: string;
   score: number;
   currentScore: number;
+  limitScore: number;
 }
 
 const Player: React.FC<PlayerProps> = ({ name, score, currentScore }) => {
@@ -21,3 +22,4 @@ const Player: React.FC<PlayerProps> = ({ name, score, currentScore }) => {
     </div>
   );
 };
+export default Player;

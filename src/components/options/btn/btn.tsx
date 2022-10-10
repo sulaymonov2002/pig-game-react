@@ -1,9 +1,10 @@
 import React from "react";
-import cls from "../option.module.scss";
+import cls from "../options.module.scss";
 interface BtnProps {
   onClick?: () => void;
   title: string;
   icon: React.ReactNode;
+  disabled?: boolean;
 }
 
 const Btn: React.FC<BtnProps> = ({ onClick, title, icon }) => (

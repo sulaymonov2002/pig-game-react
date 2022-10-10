@@ -16,7 +16,7 @@ const Stone: React.FC<StonerPorps> = ({ number }) => {
 
   return (
     <div className="stone">
-      <img src={stones[number]} alt={stones[number]} />
+      <img className="img" src={stones[number]} alt={stones[number]} />
       <h1>{number}</h1>
     </div>
   );
