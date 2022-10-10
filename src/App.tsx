@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import cls from "./base.module.scss";
+import Options from "./components/options/options";
+interface AppProps {}
+
+const App: React.FC<AppProps> = () => {
+  const [state, setState] = useState({
+    player1: 0,
+    player2: 0,
+    currentRole: true,
+    first: 0,
+    second: 0,
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className={cls.wrapper}>
+      <div className={cls["bg-opacity"]}>
+        <div
+          className={cls.container}
+          style={{
+            background: `linear-gradient(to` ${
+              state.currentRole ? "right" : "left"
+            },  #f7d7d7 50%, #fff 50%)`,
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <Player />
+          <Options />
+          <Player />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
